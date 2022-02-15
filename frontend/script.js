@@ -56,7 +56,7 @@ OBJECT: */
 
 /* Változók: */
 
-// a jS a változók esetében 2 lépcsőfok van: inicializálás : itt van, és van értéke
+// a jS a változók esetében 2 lépcsőfok van: első:  .....    , második: inicializálás : itt van, és van értéke
                                             
 
 
@@ -129,10 +129,10 @@ window.addEventListener("load", loadEvent) */
 
 let h = {
     anotherMethod: function(text){
-        return `You sent this the following argument to this method: ${text}`
+        return `You sent this the following argument to this method: ${text}`   // ${text} helyére fog kerülni amit megadunk 
     }
 }
 let i = h.anotherMethod("argument")
 
 console.log(i)
-console.log(h.anotherMethod("another argument"))
+console.log(h.anotherMethod("another argument"))                                //"h.anotherMethod = i, ezért kiválthatjuk őket"
