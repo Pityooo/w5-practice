@@ -277,7 +277,7 @@ function loadEvent() {
 
 
 
-    //létrehozunk egy "for" függványt, melyben "movieSend" a változó (mi adjuk meg a nevet, hogy tudjunk rá hivatkozni), a "movies" az objekt amiben vannak az adatok --> a "for" függvény folyamatosan átmegy az adatokon amit megadunk neki (jelenleg ez a "movies" ami a data.js fájlban lévő adatbázis), és ezt egy adott változóhoz rendeli ami jelen esetben a "movieSend"
+    //létrehozunk egy "for" ciklust, melyben "movieSend" a változó (mi adjuk meg a nevet, hogy tudjunk rá hivatkozni), a "movies" az objekt amiben vannak az adatok --> a "for" függvény folyamatosan átmegy az adatokon amit megadunk neki (jelenleg ez a "movies" ami a data.js fájlban lévő adatbázis), és ezt egy adott változóhoz rendeli ami jelen esetben a "movieSend"
     for (const movieSend of movies) {
 
         //a "document" objektumon belüli "root" ID-jü elemhez adjon hozzá egy HTML elementet, mely az "insertAdjacentHTML" ()-en belül megadott pozícióban legyen, és az ott ``(backtick)-ek közé írt text-et tartalmazza
