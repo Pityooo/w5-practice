@@ -145,7 +145,7 @@ console.log(h.anotherMethod("another argument")) */                             
 
 /* ========== STRINGEK ÖSSZEHASONLÍTÁSA ========== */
 
-/* 
+
 //meghatározzuk "Mikkamakka"-t mint egy "myString" nevű változó
 let myString = "Mikkamakka";
 
@@ -166,12 +166,12 @@ let myThirdString = "Mikkamakka";
 console.log(myString === myThirdString);
 
 //JavaScript összehasonlítás ---> A memóriában tárolt karaktertáblában végigmegy egyesével a betűkön, és egyesével megnézi, hogy ugyanazok-e az értékei
-*/
+
 
 
 /* ========== OBJECTEK ÖSSZEHASONLÍTÁSA ========== */
 
-/* 
+
 //a "myObject"-en belüli "myString" nem tud összeakadni a "myObject"-en kívüli "myString"-el, mert objekten belül van, így más scope. Illetve ezt úgy kell írni, mintha egy kulcs-érték (key-value) pár lenne -->"kulcs": "érték"
 let myObject = {
     myString: "Mikkamakka"
@@ -196,12 +196,12 @@ let myThirdObject = {
 
 //összehasonlítjuk a "myObject" és a "myThirdObject" változók értékét -> "false" lesz (a primitívek (string, number...stb), és az object-ek máshogy viselkednek összehasonlításkor, mert memóriaszinten máshol tárolódnak el. Ezek külön objektumokat hoznak létre, melyek nem lesznek egyenlőek.
 console.log(myObject === myThirdObject);
-*/
+
 
 
 /* ========== üres STRINGEK és üres OBJECT-ek összehasonlítása ========== */
 
-/* 
+
 //két üres String összehasonlítás -> "true" lesz
 console.log("" === "")
 
@@ -210,11 +210,12 @@ console.log({} === {})
 
 
 //stringek közt csak több neve lesz, objektumnál új objektum jön létre más névvel.
-*/
+
 
 
 /* ========== OBJEKTUM MÁSOLÁSA ========== */
-/* 
+
+
 //létrehotunk egy "myFourthObject" változót, amibe lemásoljuk a "myObject" változót -->"{...name}" = objektum másolása....Nested objektumok így nem másolhatóak!
 let myFourthObject = {...myObject}
 
@@ -223,12 +224,12 @@ myFourthObject.myString = "Vacskamati"
 
 //ellenőrizzük, hogy a "myFourthObject" változón belüli "myString" kulcsnak az értéke valóban "Vacskamati"-ra változott
 console.log(myFourthObject.myString)
-*/
+
 
 
 /* ========== WEB API FELDOLGOZÁS========== */
 
-/* 
+
 //írunk egy "loadEvent" nevű függvényt
 function loadEvent() {
 
@@ -293,7 +294,7 @@ function loadEvent() {
 window.addEventListener("load", function(){
 console.log("Hello")
 });
-*/
+
 
 
 let card2 = function(title, year, rate){
