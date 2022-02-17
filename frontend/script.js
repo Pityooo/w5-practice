@@ -325,7 +325,7 @@ for (const movieSend of movies) {
 window.addEventListener("load", loadEvent);
 
 
-/* ============================= ÚJ ÓRA 02.17.2022 ============================= */
+
 
 
 
