@@ -246,7 +246,7 @@ function loadEvent() {
         <div class="card"> 
         <h2>${movieRecieved.title}</h2>
         <div class="time">${movieRecieved.year}</div>
-        <div Class="rate">${movieRecieved.rate}</div>
+        <div class="rate">${movieRecieved.rate}</div>
         </div>
         `
     };
@@ -323,3 +323,9 @@ for (const movieSend of movies) {
 
 //a "window" egy global object, és ebben fut minden
 window.addEventListener("load", loadEvent);
+
+
+/* ============================= ÚJ ÓRA 02.17.2022 ============================= */
+
+
+
