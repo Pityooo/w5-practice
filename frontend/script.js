@@ -145,7 +145,7 @@ console.log(h.anotherMethod("another argument")) */                             
 
 /* ========== STRINGEK ÖSSZEHASONLÍTÁSA ========== */
 
-
+/* 
 //meghatározzuk "Mikkamakka"-t mint egy "myString" nevű változó
 let myString = "Mikkamakka";
 
@@ -166,12 +166,12 @@ let myThirdString = "Mikkamakka";
 console.log(myString === myThirdString);
 
 //JavaScript összehasonlítás ---> A memóriában tárolt karaktertáblában végigmegy egyesével a betűkön, és egyesével megnézi, hogy ugyanazok-e az értékei
-
+ */
 
 
 /* ========== OBJECTEK ÖSSZEHASONLÍTÁSA ========== */
 
-
+/* 
 //a "myObject"-en belüli "myString" nem tud összeakadni a "myObject"-en kívüli "myString"-el, mert objekten belül van, így más scope. Illetve ezt úgy kell írni, mintha egy kulcs-érték (key-value) pár lenne -->"kulcs": "érték"
 let myObject = {
     myString: "Mikkamakka"
@@ -196,18 +196,18 @@ let myThirdObject = {
 
 //összehasonlítjuk a "myObject" és a "myThirdObject" változók értékét -> "false" lesz (a primitívek (string, number...stb), és az object-ek máshogy viselkednek összehasonlításkor, mert memóriaszinten máshol tárolódnak el. Ezek külön objektumokat hoznak létre, melyek nem lesznek egyenlőek.
 console.log(myObject === myThirdObject);
-
+ */
 
 
 /* ========== üres STRINGEK és üres OBJECT-ek összehasonlítása ========== */
 
-
+/* 
 //két üres String összehasonlítás -> "true" lesz
 console.log("" === "")
 
 //két üres Object összehasonlítás -> "false" lesz, mert amint létrehozzuk az objektumot, egyből egy új objektumot hozunk létre ergo, teljesen különböző lesz. 
 console.log({} === {})
-
+ */
 
 //stringek közt csak több neve lesz, objektumnál új objektum jön létre más névvel.
 
@@ -215,7 +215,7 @@ console.log({} === {})
 
 /* ========== OBJEKTUM MÁSOLÁSA ========== */
 
-
+/* 
 //létrehotunk egy "myFourthObject" változót, amibe lemásoljuk a "myObject" változót -->"{...name}" = objektum másolása....Nested objektumok így nem másolhatóak!
 let myFourthObject = {...myObject}
 
@@ -224,12 +224,12 @@ myFourthObject.myString = "Vacskamati"
 
 //ellenőrizzük, hogy a "myFourthObject" változón belüli "myString" kulcsnak az értéke valóban "Vacskamati"-ra változott
 console.log(myFourthObject.myString)
-
+ */
 
 
 /* ========== WEB API FELDOLGOZÁS========== */
 
-
+/* 
 //írunk egy "loadEvent" nevű függvényt
 function loadEvent() {
 
@@ -294,32 +294,123 @@ function loadEvent() {
 window.addEventListener("load", function(){
 console.log("Hello")
 });
+ */
+
+/* ============================= ÚJ ÓRA 02.17.2022 ============================= */
 
 
+/* 
+function loadEvent() {
 
-let card2 = function(title, year, rate){
-    
-    return `
-    <div class="card"> 
-    <h2>${title}</h2>
-    <div class="time">${year}</div>
-    <div Class="rate">${rate}</div>
-    </div>
-    `
-};
+    let rootElement = document.getElementById("root");
 
-let anotherFavouriteMovie = {
-    "title": "The Last Scout Boy",
-    "year": 1991,
-    "rate": 7.0
-} 
+    let card2 = function(title, year, rate) { */
+        //ha egy return-t if-be tesszük, akkor ha a feltétel nem teljesül, akkor undefined lesz (mert a függvény mindig returnol valamit) -->helyette a forciklusba tesszük
+        /* if (year >= 2000) { */
 
+/*             return `
+            <div class="card"> 
+                <h2>${title}</h2>
+                <div class="time">${year}</div>
+                <div Class="rate">${rate}</div>
+            </div>
+            `; */
+        /* } else {
+            return "";
+        }*/
+    //} 
+/* 
+    let renderAllCardElements = function(cardsArray) {
+        let renderedCardList = "";
 
-rootElement.insertAdjacentHTML("beforeend", card2(anotherFavouriteMovie.title, anotherFavouriteMovie.year, anotherFavouriteMovie.rate));
+        for (const loop of cardsArray) {
 
-for (const movieSend of movies) {
-    rootElement.insertAdjacentHTML("beforeend", card2(movieSend.title, movieSend.year, movieSend.rate));
+            renderedCardList.push(loop); */
+        //}
+        //"for" ciklus ami végigmegy a "cardsArray"-en, mely a paraméter
+        //minden lépcsőjénél hozzáadja a renderedCardList-hez az adott elemet, a megfelelő div card-bann
+        //returnöli az elkészült elemekkel feltöltött cardList-et
+    //}
+
+    //a movieSend az a movies lesz, így ha movieSend.year-t írok az oylan mintha movies.year-t írnék
+
+    //movies.sort(function(a, b){return a.year - b.year})
+/* 
+    let newGoodMovies = [];
+
+    for (const movieSend of movies) { */
+        
+        /* let newerThan2000 = false;
+
+        if (movieSend.year > 2000) {
+            newerThan2000 = true;
+        }
+        if (newerThan2000) {
+            rootElement.insertAdjacentHTML("beforeend", card2(movieSend.title, movieSend.year, movieSend.rate));
+        } */
+        //let floorRate = Math.floor(movieSend.rate);
+
+/*         if (movieSend.year > 2000 && movieSend.rate >= 8) {
+            //rootElement.insertAdjacentHTML("beforeend", card2(movieSend.title, movieSend.year, floorRate));
+            newGoodMovies.push(movieSend);
+        }
+    }
+    newGoodMovies.sort(function(a, b){return a.year - b.year});
+
+    rootElement.insertAdjacentHTML("beforeend", renderAllCardElements(newGoodMovies))
+
+    console.log(newGoodMovies);
 }
 
-//a "window" egy global object, és ebben fut minden
+window.addEventListener("load", loadEvent); */
+
+
+
+function loadEvent() {
+
+    let rootElement = document.getElementById("root");
+    let card2 = function(title, year, rate) {
+            return `
+            <div class="card"> 
+                <h2>${title}</h2>
+                <div class="time">${year}</div>
+                <div Class="rate">${rate}</div>
+            </div>
+            `;
+    } 
+
+    let renderAllCardElements = function(incomingMoviesArray) {
+        let renderedCardList = "";
+
+        //"for" ciklus ami végigmegy a "cardsArray"-en, mely a paraméter
+        for (const incomingMovie of incomingMoviesArray) {
+            //minden lépcsőjénél hozzáadja a renderedCardList-hez az adott elemet, a megfelelő div card-bann
+            renderedCardList += `
+            <div class="card"> 
+                <h2>${incomingMovie.title}</h2>
+                <div class="time">${incomingMovie.year}</div>
+                <div Class="rate">${incomingMovie.rate}</div>
+            </div>
+            `
+        }
+        console.log(renderedCardList);
+        //returnöli az elkészült elemekkel feltöltött cardList-et
+        return renderedCardList
+    }
+
+    let newGoodMovies = [];   //ezek a jo cardok
+
+    for (const movieSend of movies) {
+        if (movieSend.year > 2000 && movieSend.rate >= 8) {
+            newGoodMovies.push(movieSend);
+        }
+    }
+
+    newGoodMovies.sort(function(a, b){return a.year - b.year});
+
+    rootElement.insertAdjacentHTML("beforeend", renderAllCardElements(newGoodMovies))
+
+    console.log(newGoodMovies);
+}
+
 window.addEventListener("load", loadEvent);
