@@ -375,7 +375,7 @@ function loadEvent() {
             <div class="card"> 
                 <h2>${title}</h2>
                 <div class="time">${year}</div>
-                <div Class="rate">${rate}</div>
+                <div class="rate">${rate}</div>
             </div>
             `;
     } 
@@ -406,15 +406,15 @@ function loadEvent() {
     let newGoodMovies = [];
 
     for (const movieSend of movies) {
-        if (movieSend.year > 2000 && movieSend.rate >= 8) {
+        if (movieSend.year > 2010 && movieSend.rate >= 8) {
             newGoodMovies.push(movieSend);
         }
     }
 
-    newGoodMovies.sort(function(a, b){return a.year - b.year});
+    newGoodMovies.sort(function(a, b){return a.year - b.year});  //
 
     rootElement.insertAdjacentHTML("beforeend", renderAllCardElements(newGoodMovies))
 
 }
 
-window.addEventListener("load", loadEvent);
+    window.addEventListener("load", loadEvent);
